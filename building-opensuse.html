@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>How openSUSE is built</title>
+<meta name="author" content="Dan Čermák"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./node_modules/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="./node_modules/reveal.js/dist/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css"/>
+
+<link rel="stylesheet" href="./custom-style.css"/>
+<link rel="stylesheet" href="./node_modules/reveal.js/plugin/highlight/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './node_modules/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="title">How openSUSE is built</h2>
+<p class="subtitle" style="color: Gray;">From source code to an installation disk</p>
+<p class="author">Dan Čermák</p>
+<div style="float:left"><a href="https://more.suse.com/openhousecz" target="_blank"><img src="./media/SUSE_Logo-hor_L_Green-pos_sRGB.svg" height="50px" style="margin-bottom:-12px"/>&nbsp SUSE Open House</a></div>
+<div style="float:right;font-size:35px;"><p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#"><a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+CC BY 4.0 <i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i></a></p></div>
+</section>
+
+<section>
+<section id="slide-org0e8c9f8">
+<h2 id="org0e8c9f8">who -u</h2>
+<p>
+Dan Čermák
+</p>
+
+<p>
+ <div style="float:center">
+ <table class="who-table">
+ <tr><td><i class="fab fa-suse"></i></td><td> Software Developer @SUSE, SLE BCI Releng</td></tr>
+ <tr><td><i class="far fa-heart"></i></td><td> Developer Tools, Testing and Documentation, Home Automation</td></tr>
+ <tr></tr>
+ <tr></tr>
+ <tr><td><i class="fa-solid fa-globe"></i></td><td> <a href="https://dancermak.name/">https://dancermak.name</a></td></tr>
+ <tr><td><i class="fab fa-github"></i></td><td> <a href="https://github.com/dcermak/">dcermak</a></td></tr>
+ <tr><td><i class="fab fa-mastodon"></i></td><td> <a href="https://mastodon.social/@Defolos">@Defolos@mastodon.social</a></td></tr>
+ </table>
+ </div>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgcd82d13">
+<h2 id="orgcd82d13">Why even build a distribution?</h2>
+<p class="fragment appear">
+Just <code>pip/npm/cargo install</code> everything!
+</p>
+
+<p class="fragment appear">
+A distribution provides:
+</p>
+<ul>
+<li class="fragment appear">integration</li>
+<li class="fragment appear">keep packages working with each other</li>
+<li class="fragment appear">testing/QE</li>
+<li class="fragment appear">installers</li>
+<li class="fragment appear">opinionated defaults</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org440c2b0">
+<h2 id="org440c2b0">From Sources to an Installer</h2>
+<ul>
+<li class="fragment appear">just distributing sources isn't good enough anymore</li>
+<li class="fragment appear">create binaries</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org1cf8533">
+<h2 id="org1cf8533">Deliverables</h2>
+<ul>
+<li class="fragment appear">disk images</li>
+<li class="fragment appear">installation ISOs</li>
+<li class="fragment appear">container images</li>
+<li class="fragment appear">binary packages</li>
+<li class="fragment appear">repositories</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd464ef9">
+<h2 id="orgd464ef9">Parts of a Build System</h2>
+<aside class="notes">
+<ul>
+<li>RPM building</li>
+<li>repository assembly</li>
+<li>image/container build</li>
+<li>publishing</li>
+<li>package monitoring</li>
+<li>source control</li>
+
+</ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/linux-distro-build-pipeline.svg"/>
+</p>
+
+
+</section>
+<section id="slide-orgb316798">
+<h3 id="orgb316798">RPM packages</h3>
+<p class="fragment (appear)">
+<img src="./media/rpm-package.svg"/>
+</p>
+
+
+</section>
+<section id="slide-org12de3ff">
+<h3 id="org12de3ff">Flatpacks</h3>
+<ul>
+<li>binaries including all dependencies</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org0a32eca">
+<h3 id="org0a32eca">Build system</h3>
+<p class="fragment (appear)">
+<img src="./media/obs-overview.svg"/>
+</p>
+
+
+</section>
+<section id="slide-org3514c48">
+<h3 id="org3514c48">Repository Assembly</h3>
+<ul>
+<li class="fragment appear">only ship what's required</li>
+<li class="fragment appear">remove obsolete packages</li>
+<li class="fragment appear">patchinfo creation</li>
+<li class="fragment appear">deltarpms</li>
+
+</ul>
+
+
+</section>
+<section id="slide-orgc7c90c3">
+<h3 id="orgc7c90c3">Testing/QE</h3>
+<ul>
+<li>test automation with openQA</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org3a48ef8">
+<h2 id="org3a48ef8">The Factory Process</h2>
+<aside class="notes">
+<ul>
+<li>how to submit to Factory</li>
+
+</ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/factory-process.svg"/>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgf786325">
+<h2 id="orgf786325">Questions?</h2>
+<p class="fragment (appear)">
+Answers!
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="./node_modules/reveal.js/dist/reveal.js"></script>
+<script src="./node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="./node_modules/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight, RevealNotes, history],
+transition: 'none', hash: true
+});
+
+</script>
+</body>
+</html>
