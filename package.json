@@ -1,0 +1,11 @@
+{
+  "name": "building-opensuse",
+  "version": "0.0.1",
+  "description": "Slides for the presentation How openSUSE is built",
+  "author": "Dan Čermák <dcermak@suse.com>",
+  "license": "CC-BY-SA-4.0",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.6",
+    "reveal.js": "^5.1"
+  }
+}
