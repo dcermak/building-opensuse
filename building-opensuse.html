@@ -40,8 +40,8 @@ CC BY 4.0 <i class="fab fa-creative-commons"></i> <i class="fab fa-creative-comm
 </section>
 
 <section>
-<section id="slide-org0e8c9f8">
-<h2 id="org0e8c9f8">who -u</h2>
+<section id="slide-org904d036">
+<h2 id="org904d036">who -u</h2>
 <p>
 Dan Čermák
 </p>
@@ -64,42 +64,90 @@ Dan Čermák
 </section>
 </section>
 <section>
-<section id="slide-orgcd82d13">
-<h2 id="orgcd82d13">Why even build a distribution?</h2>
+<section id="slide-org2468e81">
+<h2 id="org2468e81">Why even build a distribution?</h2>
+<aside class="notes">
+<p>
+A distribution provides:
+</p>
+
+<ul>
+<li>integration</li>
+<li>keep packages working with each other</li>
+<li>testing/QE</li>
+<li>installers</li>
+<li>opinionated defaults</li>
+
+</ul>
+
+</aside>
+
 <p class="fragment appear">
 Just <code>pip/npm/cargo install</code> everything!
 </p>
 
+<div class="org-src-container">
+
+<pre  class="fragment appear"  ><code class="shell" >$ pip3 install pysqlite3
+...
+Failed to build pysqlite3
+Installing collected packages: pysqlite3
+  Running setup.py install for pysqlite3 ... error
+  error: subprocess-exited-with-error
+
+  × Running setup.py install for pysqlite3 did not run successfully.
+</code></pre>
+</div>
+
 <p class="fragment appear">
-A distribution provides:
+oops <i class="fa-solid fa-burst"></i>
 </p>
-<ul>
-<li class="fragment appear">integration</li>
-<li class="fragment appear">keep packages working with each other</li>
-<li class="fragment appear">testing/QE</li>
-<li class="fragment appear">installers</li>
-<li class="fragment appear">opinionated defaults</li>
-
-</ul>
-
 
 </section>
 </section>
 <section>
-<section id="slide-org440c2b0">
-<h2 id="org440c2b0">From Sources to an Installer</h2>
+<section id="slide-org83bc79f">
+<h2 id="org83bc79f">From Sources to an Installer</h2>
+<aside class="notes">
 <ul>
-<li class="fragment appear">just distributing sources isn't good enough anymore</li>
-<li class="fragment appear">create binaries</li>
+<li>just distributing sources isn't good enough anymore</li>
 
 </ul>
+<p>
+&rarr; have to build &amp; distribute binaries
+</p>
 
+</aside>
+
+<p class="fragment appear">
+A long time ago…
+</p>
+
+<div class="org-src-container">
+
+<pre  class="fragment appear"  ><code class="shell" >$ cat INSTALL
+
+BASIC INSTALLATION
+
+On most Unix systems, you build Emacs by first running the
+'configure' shell script.  This attempts to deduce the
+correct values for various system-dependent variables and
+features, and find the directories where certain system
+headers and libraries are kept.  In a few cases, you may
+need to explicitly tell configure where to find some things,
+or what options to use.
+</code></pre>
+</div>
+
+<p class="fragment appear">
+Ain't no body got time for that  (╯°□°）╯︵ ┻━┻
+</p>
 
 </section>
 </section>
 <section>
-<section id="slide-org1cf8533">
-<h2 id="org1cf8533">Deliverables</h2>
+<section id="slide-org5c68d36">
+<h2 id="org5c68d36">Deliverables</h2>
 <ul>
 <li class="fragment appear">disk images</li>
 <li class="fragment appear">installation ISOs</li>
@@ -113,8 +161,8 @@ A distribution provides:
 </section>
 </section>
 <section>
-<section id="slide-orgd464ef9">
-<h2 id="orgd464ef9">Parts of a Build System</h2>
+<section id="slide-org60ad3f8">
+<h2 id="org60ad3f8">Parts of a Build System</h2>
 <aside class="notes">
 <ul>
 <li>RPM building</li>
@@ -134,16 +182,16 @@ A distribution provides:
 
 
 </section>
-<section id="slide-orgb316798">
-<h3 id="orgb316798">RPM packages</h3>
+<section id="slide-org1f69d72">
+<h3 id="org1f69d72">RPM packages</h3>
 <p class="fragment (appear)">
 <img src="./media/rpm-package.svg"/>
 </p>
 
 
 </section>
-<section id="slide-org12de3ff">
-<h3 id="org12de3ff">Flatpacks</h3>
+<section id="slide-orgb26c63d">
+<h3 id="orgb26c63d">Flatpacks</h3>
 <ul>
 <li>binaries including all dependencies</li>
 
@@ -151,39 +199,61 @@ A distribution provides:
 
 
 </section>
-<section id="slide-org0a32eca">
-<h3 id="org0a32eca">Build system</h3>
+<section id="slide-org8cd9309">
+<h3 id="org8cd9309">Build system</h3>
 <p class="fragment (appear)">
 <img src="./media/obs-overview.svg"/>
 </p>
 
 
 </section>
-<section id="slide-org3514c48">
-<h3 id="org3514c48">Repository Assembly</h3>
+<section id="slide-org7ebf5b7">
+<h3 id="org7ebf5b7">Repository Assembly</h3>
+<aside class="notes">
 <ul>
-<li class="fragment appear">only ship what's required</li>
-<li class="fragment appear">remove obsolete packages</li>
-<li class="fragment appear">patchinfo creation</li>
-<li class="fragment appear">deltarpms</li>
+<li>only ship what's required</li>
+<li>remove obsolete packages</li>
+<li>patchinfo creation</li>
+<li>deltarpms</li>
 
 </ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/repocreate.svg"/>
+</p>
 
 
 </section>
-<section id="slide-orgc7c90c3">
-<h3 id="orgc7c90c3">Testing/QE</h3>
+<section id="slide-org300d76b">
+<h3 id="org300d76b">Testing/QE</h3>
+<aside class="notes">
 <ul>
-<li>test automation with openQA</li>
+<li>test automation performed using openQA</li>
 
 </ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/openqa_architecture.svg"/>
+</p>
+
+</section>
+<section id="slide-org300d76b-split">
+
+<p>
+<video id="video" src="./media/o3-test-4621651.webm" controls/>
+</p>
+
 
 
 </section>
 </section>
 <section>
-<section id="slide-org3a48ef8">
-<h2 id="org3a48ef8">The Factory Process</h2>
+<section id="slide-orgd46fc2a">
+<h2 id="orgd46fc2a">The Factory Process</h2>
 <aside class="notes">
 <ul>
 <li>how to submit to Factory</li>
@@ -200,8 +270,8 @@ A distribution provides:
 </section>
 </section>
 <section>
-<section id="slide-orgf786325">
-<h2 id="orgf786325">Questions?</h2>
+<section id="slide-org67e4b95">
+<h2 id="org67e4b95">Questions?</h2>
 <p class="fragment (appear)">
 Answers!
 </p>
