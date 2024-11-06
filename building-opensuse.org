@@ -42,25 +42,61 @@ Dan Čermák
 
 * Why even build a distribution?
 
-#+ATTR_REVEAL: :frag appear
-Just =pip/npm/cargo install= everything!
-
-#+ATTR_REVEAL: :frag appear
+#+begin_notes
 A distribution provides:
-#+ATTR_REVEAL: :frag (appear)
+
 - integration
 - keep packages working with each other
 - testing/QE
 - installers
 - opinionated defaults
+#+end_notes
 
+#+ATTR_REVEAL: :frag appear
+Just =pip/npm/cargo install= everything!
+
+#+ATTR_REVEAL: :frag appear
+#+begin_src shell
+$ pip3 install pysqlite3
+...
+Failed to build pysqlite3
+Installing collected packages: pysqlite3
+  Running setup.py install for pysqlite3 ... error
+  error: subprocess-exited-with-error
+
+  × Running setup.py install for pysqlite3 did not run successfully.
+#+end_src
+
+#+ATTR_REVEAL: :frag appear
+oops @@html:<i class="fa-solid fa-burst"></i>@@
 
 * From Sources to an Installer
 
-#+ATTR_REVEAL: :frag (appear)
+#+begin_notes
 - just distributing sources isn't good enough anymore
-- create binaries
+\rightarrow have to build & distribute binaries
+#+end_notes
 
+#+ATTR_REVEAL: :frag appear
+A long time ago…
+
+#+ATTR_REVEAL: :frag appear
+#+begin_src shell
+$ cat INSTALL
+
+BASIC INSTALLATION
+
+On most Unix systems, you build Emacs by first running the
+'configure' shell script.  This attempts to deduce the
+correct values for various system-dependent variables and
+features, and find the directories where certain system
+headers and libraries are kept.  In a few cases, you may
+need to explicitly tell configure where to find some things,
+or what options to use.
+#+end_src
+
+#+ATTR_REVEAL: :frag appear
+Ain't no body got time for that  (╯°□°）╯︵ ┻━┻
 
 * Deliverables
 
@@ -106,16 +142,31 @@ A distribution provides:
 
 ** Repository Assembly
 
-#+ATTR_REVEAL: :frag (appear)
+#+begin_notes
 - only ship what's required
 - remove obsolete packages
 - patchinfo creation
 - deltarpms
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/repocreate.svg"/>@@
 
 
 ** Testing/QE
 
-- test automation with openQA
+#+begin_notes
+- test automation performed using openQA
+
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/openqa_architecture.svg"/>@@
+
+#+REVEAL: split
+
+@@html:<video id="video" src="./media/o3-test-4621651.webm" controls/>@@
+
 
 
 * The Factory Process
