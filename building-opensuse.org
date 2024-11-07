@@ -68,7 +68,7 @@ Installing collected packages: pysqlite3
 #+end_src
 
 #+ATTR_REVEAL: :frag appear
-oops @@html:<i class="fa-solid fa-burst"></i>@@
+oops 🫠
 
 * From Sources to an Installer
 
@@ -96,7 +96,18 @@ or what options to use.
 #+end_src
 
 #+ATTR_REVEAL: :frag appear
-Ain't no body got time for that  (╯°□°）╯︵ ┻━┻
+Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
+
+
+#+REVEAL: split
+@@html:<img src="./media/from-source-to-image.svg"/>@@
+
+
+* It starts with Packages
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/rpm-package.svg"/>@@
+
 
 * Deliverables
 
@@ -125,8 +136,6 @@ Ain't no body got time for that  (╯°□°）╯︵ ┻━┻
 
 ** RPM packages
 
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/rpm-package.svg"/>@@
 
 
 ** Flatpacks
