@@ -3,7 +3,7 @@
 #+DATE: November 13, 2024
 #+EMAIL: dcermak@suse.com
 #+TITLE: How openSUSE is built
-#+SUBTITLE: From source code to an installation disk
+#+SUBTITLE: From Source Code to an Installation Disk
 
 #+REVEAL_ROOT: ./node_modules/reveal.js/
 #+REVEAL_THEME: simple
@@ -103,23 +103,66 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 @@html:<img src="./media/from-source-to-image.svg"/>@@
 
 
-* It starts with Packages
+* It starts with packages
+
+#+begin_notes
+- take upstream sources
+- add build instructions
+- add patches
+- custom config?
+- define dependencies, buildrequires, subpackages & a lot of other metadata
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/podman_in_obs.png"/>@@
+
+** RPM packages
 
 #+ATTR_REVEAL: :frag (appear)
 @@html:<img src="./media/rpm-package.svg"/>@@
 
 
-* Deliverables
+** You said Dependencies?
 
 #+ATTR_REVEAL: :frag (appear)
-- disk images
-- installation ISOs
-- container images
-- binary packages
+@@html:<img src="./media/dependencies.svg"/>@@
+
+
+** Dependency Hell 👿
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/factory-ring0.png"/>@@
+
+
+** The people behind this
+
+#+ATTR_REVEAL: :frag (appear)
+Packaging Team
+#+ATTR_REVEAL: :frag (appear)
+- update packages
+- fix build issues
+- backport bugfixes
+
+* Distribution Assembly
+
+#+begin_notes
+- how do you combine the distro mess into a working thing?
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/releng.svg"/>@@
+
+
+** What's in a distribution?
+
+#+ATTR_REVEAL: :frag (appear)
+- @@html:<i class="fa-solid fa-compact-disc"></i>@@ installation ISOs
+- @@html:<i class="fa-solid fa-hard-drive"></i>@@ disk & container images
+- @@html:<i class="fa-solid fa-box-archive"></i>@@ binary packages
 - repositories
 
 
-* Parts of a Build System
+** Parts of a Build System
 
 #+begin_notes
 - RPM building
@@ -134,22 +177,9 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 @@html:<img src="./media/linux-distro-build-pipeline.svg"/>@@
 
 
-** RPM packages
-
-
-
-** Flatpacks
-
-- binaries including all dependencies
-
-
-** Build system
-
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/obs-overview.svg"/>@@
-
-
 ** Repository Assembly
+
+# Maybe skip this slide?
 
 #+begin_notes
 - only ship what's required
@@ -162,11 +192,54 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 @@html:<img src="./media/repocreate.svg"/>@@
 
 
-** Testing/QE
+** The Factory Process
+
+#+begin_notes
+- how to submit to Factory
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/factory-process.svg"/>@@
+
+
+** The people behind this
+
+#+ATTR_REVEAL: :frag (appear)
+Release Engineering
+#+ATTR_REVEAL: :frag (appear)
+- review package submissions & assign to stagings
+- review assembly & integration issues
+- review tests & bugs
+
+
+* Build system
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/obs-overview.svg"/>@@
+
+** The people behind this
+
+#+ATTR_REVEAL: :frag (appear)
+Buildservice and Buildops
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<a href="https://github.com/openSUSE/open-build-service/"><i class="fa-brands fa-github"></i> openSUSE/open-build-service</a>@@
+
+#+ATTR_REVEAL: :frag (appear)
+- develop the build service
+- run the infrastructure
+
+
+* Testing/QE
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="media/Ubuntu_4.10_kernel_panic.png" height="500px"/>@@
+
+
+** Test automation
 
 #+begin_notes
 - test automation performed using openQA
-
 #+end_notes
 
 #+ATTR_REVEAL: :frag (appear)
@@ -177,15 +250,39 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 @@html:<video id="video" src="./media/o3-test-4621651.webm" controls/>@@
 
 
-
-* The Factory Process
-
-#+begin_notes
-- how to submit to Factory
-#+end_notes
+** The people behind this
 
 #+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/factory-process.svg"/>@@
+QE & Test tooling Team
+
+#+ATTR_REVEAL: :frag (appear)
+- implement test cases
+- improve test automation
+- review test runs
+- verify bugfixes
+- manual testing
+
+
+* Infrastructure
+
+#+ATTR_REVEAL: :frag (appear)
+[[https://en.opensuse.org/openSUSE:Heroes][openSUSE Heroes]]
+
+#+ATTR_REVEAL: :frag (appear)
+- run the infrastructure
+- maintain automation
+- moderation
+
+
+* Links
+
+- [[https://get.opensuse.org/][get.opensuse.org]]
+- [[https://build.opensuse.org/][build.opensuse.org]]
+- [[https://openqa.opensuse.org/][openqa.opensuse.org]]
+
+@@html:<img src="media/presentation-qr.svg" height="300px"/>@@
+
+@@html:<i class="fa-solid fa-person-chalkboard"></i>@@ [[https://github.com/dcermak/building-opensuse/][github.com/dcermak/building-opensuse]]
 
 
 * Questions?

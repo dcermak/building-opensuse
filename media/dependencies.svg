@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="331.48203mm"
+   height="152.52507mm"
+   viewBox="0 0 331.48203 152.52507"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="dependencies.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.52872124"
+     inkscape:cx="-46.338218"
+     inkscape:cy="78.491267"
+     inkscape:window-width="2556"
+     inkscape:window-height="1396"
+     inkscape:window-x="1920"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-5-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-2-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-5-0-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-2-2-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-8-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-9-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DartArrow-5-0-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6-2-2-8" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(93.529688,-18.774295)">
+    <path
+       d="m -87.937009,49.768321 h 7.877692 c 0.311239,0 0.562692,0.251454 0.562692,0.562693 v 0.562692 c 0,0.311239 -0.251453,0.562692 -0.562692,0.562692 h -7.877692 c -0.311239,0 -0.562692,-0.251453 -0.562692,-0.562692 v -0.562692 c 0,-0.311239 0.251453,-0.562693 0.562692,-0.562693 z m 0,2.25077 h 7.877692 v 4.501538 c 0,0.62072 -0.504665,1.125385 -1.125385,1.125385 h -5.626922 c -0.62072,0 -1.125385,-0.504665 -1.125385,-1.125385 z m 2.25077,1.40673 c 0,0.15474 0.126605,0.281346 0.281346,0.281346 h 2.813461 c 0.15474,0 0.281346,-0.126606 0.281346,-0.281346 0,-0.15474 -0.126606,-0.281346 -0.281346,-0.281346 h -2.813461 c -0.154741,0 -0.281346,0.126606 -0.281346,0.281346 z"
+       id="path1"
+       style="stroke-width:0.0175841" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.397;stroke-dasharray:none"
+       x="-76.314247"
+       y="56.047176"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.397;stroke-dasharray:none"
+         x="-76.314247"
+         y="56.047176">podman</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.5;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.396999;stroke-dasharray:none"
+       x="-82.569496"
+       y="68.307495"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="-82.569496"
+         y="68.307495">Requires:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="-82.569496"
+         y="78.95974"
+         id="tspan3"> conmon &gt;= 2.0.24</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="-82.569496"
+         y="89.611977"
+         id="tspan4"> crun</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="-82.569496"
+         y="100.26422"
+         id="tspan5"> netavark</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="-82.569496"
+         y="110.91647"
+         id="tspan6"> …</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.397;stroke-dasharray:1.588, 1.588;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5"
+       width="90.075836"
+       height="73.561928"
+       x="-93.32856"
+       y="46.038754"
+       ry="4.1104908" />
+    <path
+       d="m 43.476581,22.702362 h 7.87769 c 0.31124,0 0.56269,0.251454 0.56269,0.562693 v 0.562692 c 0,0.311239 -0.25145,0.562692 -0.56269,0.562692 h -7.87769 c -0.31124,0 -0.56269,-0.251453 -0.56269,-0.562692 v -0.562692 c 0,-0.311239 0.25145,-0.562693 0.56269,-0.562693 z m 0,2.25077 h 7.87769 v 4.501538 c 0,0.62072 -0.50466,1.125385 -1.12538,1.125385 h -5.62693 c -0.62071,0 -1.12538,-0.504665 -1.12538,-1.125385 z m 2.25077,1.40673 c 0,0.15474 0.1266,0.281346 0.28135,0.281346 h 2.81346 c 0.15474,0 0.28134,-0.126606 0.28134,-0.281346 0,-0.15474 -0.1266,-0.281346 -0.28134,-0.281346 h -2.81346 c -0.15475,0 -0.28135,0.126606 -0.28135,0.281346 z"
+       id="path1-0"
+       style="stroke-width:0.0175841" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.397;stroke-dasharray:none"
+       x="55.09935"
+       y="28.981218"
+       id="text1-2"><tspan
+         sodipodi:role="line"
+         id="tspan1-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.397;stroke-dasharray:none"
+         x="55.09935"
+         y="28.981218">conmon</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.5;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.396999;stroke-dasharray:none"
+       x="48.844101"
+       y="41.241535"
+       id="text2-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="41.241535">Requires:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="51.893776"
+         id="tspan3-3"> libc</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="62.546021"
+         id="tspan4-2"> glib</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="73.198265"
+         id="tspan6-5"> libsystemd</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.397;stroke-dasharray:1.588, 1.588;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-9"
+       width="66.743698"
+       height="60.300766"
+       x="38.085037"
+       y="18.972795"
+       ry="4.1104908" />
+    <path
+       d="m 152.3182,22.702362 h 7.87769 c 0.31124,0 0.56269,0.251454 0.56269,0.562693 v 0.562692 c 0,0.311239 -0.25145,0.562692 -0.56269,0.562692 h -7.87769 c -0.31124,0 -0.56269,-0.251453 -0.56269,-0.562692 v -0.562692 c 0,-0.311239 0.25145,-0.562693 0.56269,-0.562693 z m 0,2.25077 h 7.87769 v 4.501538 c 0,0.62072 -0.50466,1.125385 -1.12538,1.125385 h -5.62693 c -0.62071,0 -1.12538,-0.504665 -1.12538,-1.125385 z m 2.25077,1.40673 c 0,0.15474 0.1266,0.281346 0.28135,0.281346 h 2.81346 c 0.15474,0 0.28134,-0.126606 0.28134,-0.281346 0,-0.15474 -0.1266,-0.281346 -0.28134,-0.281346 h -2.81346 c -0.15475,0 -0.28135,0.126606 -0.28135,0.281346 z"
+       id="path1-0-8"
+       style="stroke-width:0.0175841" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.397;stroke-dasharray:none"
+       x="163.94098"
+       y="28.981218"
+       id="text1-2-0"><tspan
+         sodipodi:role="line"
+         id="tspan1-7-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.397;stroke-dasharray:none"
+         x="163.94098"
+         y="28.981218">glibc</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.5;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.396999;stroke-dasharray:none"
+       x="157.68573"
+       y="41.241535"
+       id="text2-6-0"><tspan
+         sodipodi:role="line"
+         id="tspan2-1-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="41.241535">Requires:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="51.893776"
+         id="tspan6-5-6"> filesystem</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.397;stroke-dasharray:1.588, 1.588;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-9-25"
+       width="68.557716"
+       height="39.533287"
+       x="146.92667"
+       y="18.972795"
+       ry="4.1104908" />
+    <path
+       d="m 152.3182,74.74617 h 7.87769 c 0.31124,0 0.56269,0.251454 0.56269,0.562693 v 0.562692 c 0,0.311239 -0.25145,0.562692 -0.56269,0.562692 h -7.87769 c -0.31124,0 -0.56269,-0.251453 -0.56269,-0.562692 v -0.562692 c 0,-0.311239 0.25145,-0.562693 0.56269,-0.562693 z m 0,2.25077 h 7.87769 v 4.501538 c 0,0.62072 -0.50466,1.125385 -1.12538,1.125385 h -5.62693 c -0.62071,0 -1.12538,-0.504665 -1.12538,-1.125385 z m 2.25077,1.40673 c 0,0.15474 0.1266,0.281346 0.28135,0.281346 h 2.81346 c 0.15474,0 0.28134,-0.126606 0.28134,-0.281346 0,-0.15474 -0.1266,-0.281346 -0.28134,-0.281346 h -2.81346 c -0.15475,0 -0.28135,0.126606 -0.28135,0.281346 z"
+       id="path1-0-8-9"
+       style="stroke-width:0.0175841" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.397;stroke-dasharray:none"
+       x="163.94098"
+       y="81.025024"
+       id="text1-2-0-4"><tspan
+         sodipodi:role="line"
+         id="tspan1-7-4-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.397;stroke-dasharray:none"
+         x="163.94098"
+         y="81.025024">libsystemd0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.5;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.396999;stroke-dasharray:none"
+       x="157.68573"
+       y="93.285339"
+       id="text2-6-0-2"><tspan
+         sodipodi:role="line"
+         id="tspan2-1-9-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="93.285339">Requires:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="103.93758"
+         id="tspan6-5-6-4"> libc</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="114.58982"
+         id="tspan11"> libcap</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="125.24207"
+         id="tspan12"> ld-linux</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="157.68573"
+         y="135.8943"
+         id="tspan13"> …</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.397;stroke-dasharray:1.588, 1.588;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-9-25-1"
+       width="68.807922"
+       height="72.310867"
+       x="146.92667"
+       y="71.016602"
+       ry="4.1104908" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow)"
+       d="m -3.1718703,76.654213 c 24.9855903,0 11.1990914,-49.631468 36.1996713,-49.631468"
+       id="path7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-8)"
+       d="m 104.97359,151.93234 c 24.98559,0 11.19909,-49.63147 36.19967,-49.63147"
+       id="path7-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-8-6)"
+       d="m 104.97359,70.614206 c 24.98559,0 11.19909,16.988687 36.19967,16.988687"
+       id="path7-8-8"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-5)"
+       d="m -53.419973,87.529167 h 50.2068281 c 21.2065349,0 23.7406559,8.766896 36.2409459,8.766896"
+       id="path7-0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-5-0)"
+       d="m 74.273428,119.11728 h 30.440212 c 21.20653,0 11.23012,-86.062933 36.24094,-86.062933"
+       id="path7-0-4"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-5-0-3)"
+       d="m 184.91437,101.68216 h 30.44021 c 29.07972,0 28.48037,-74.916623 6.07512,-74.916623"
+       id="path7-0-4-4"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-5-0-1)"
+       d="m 74.273428,49.80894 h 30.440212 c 21.20653,0 11.23012,-22.509437 36.24094,-22.509437"
+       id="path7-0-4-3"
+       sodipodi:nodetypes="ccc" />
+    <path
+       d="m 43.476581,92.511124 h 7.87769 c 0.31124,0 0.56269,0.251454 0.56269,0.562693 v 0.562692 c 0,0.311239 -0.25145,0.562692 -0.56269,0.562692 h -7.87769 c -0.31124,0 -0.56269,-0.251453 -0.56269,-0.562692 v -0.562692 c 0,-0.311239 0.25145,-0.562693 0.56269,-0.562693 z m 0,2.25077 h 7.87769 v 4.501538 c 0,0.62072 -0.50466,1.125388 -1.12538,1.125388 h -5.62693 c -0.62071,0 -1.12538,-0.504668 -1.12538,-1.125388 z m 2.25077,1.40673 c 0,0.15474 0.1266,0.281346 0.28135,0.281346 h 2.81346 c 0.15474,0 0.28134,-0.126606 0.28134,-0.281346 0,-0.15474 -0.1266,-0.281346 -0.28134,-0.281346 h -2.81346 c -0.15475,0 -0.28135,0.126606 -0.28135,0.281346 z"
+       id="path1-0-2"
+       style="stroke-width:0.0175841" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:none;stroke:#000000;stroke-width:0.397;stroke-dasharray:none"
+       x="55.09935"
+       y="98.789978"
+       id="text1-2-9"><tspan
+         sodipodi:role="line"
+         id="tspan1-7-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.397;stroke-dasharray:none"
+         x="55.09935"
+         y="98.789978">crun</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.05556px;line-height:1.5;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.396999;stroke-dasharray:none"
+       x="48.844101"
+       y="111.05029"
+       id="text2-6-1"><tspan
+         sodipodi:role="line"
+         id="tspan2-1-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="111.05029">Requires:</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="121.70254"
+         id="tspan3-3-4"> libc</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="132.35478"
+         id="tspan4-2-2"> libkrun</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="143.00702"
+         id="tspan6-5-2"> libcap</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="153.65926"
+         id="tspan8"> libsystemd</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.5;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.397"
+         x="48.844101"
+         y="164.31151"
+         id="tspan9"> …</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.397;stroke-dasharray:1.588, 1.588;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5-9-2"
+       width="66.806252"
+       height="82.319305"
+       x="38.085037"
+       y="88.781555"
+       ry="4.1104908" />
+  </g>
+</svg>
