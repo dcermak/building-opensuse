@@ -96,7 +96,7 @@ or what options to use.
 #+end_src
 
 #+ATTR_REVEAL: :frag appear
-Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
+Ain't no body got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
 
 
 #+REVEAL: split
@@ -114,7 +114,7 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 #+end_notes
 
 #+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/podman_in_obs.png"/>@@
+@@html:<img src="./media/docker-in-obs.png"/>@@
 
 ** RPM packages
 
@@ -122,7 +122,18 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 @@html:<img src="./media/rpm-package.svg"/>@@
 
 
-** You said Dependencies?
+** The people behind this
+
+#+ATTR_REVEAL: :frag (appear)
+Packaging Team
+#+ATTR_REVEAL: :frag (appear)
+- update packages
+- fix build & test issues
+- triage bugreports
+- backport bugfixes
+
+
+* You said Dependencies?
 
 #+ATTR_REVEAL: :frag (appear)
 @@html:<img src="./media/dependencies.svg"/>@@
@@ -133,17 +144,7 @@ Ain't no body got time for that @@html:&nbsp;@@  (╯°□°）╯︵ ┻━┻
 #+ATTR_REVEAL: :frag (appear)
 @@html:<img src="./media/factory-ring0.png"/>@@
 
-
-** The people behind this
-
-#+ATTR_REVEAL: :frag (appear)
-Packaging Team
-#+ATTR_REVEAL: :frag (appear)
-- update packages
-- fix build issues
-- backport bugfixes
-
-* Distribution Assembly
+** Distribution Assembly
 
 #+begin_notes
 - how do you combine the distro mess into a working thing?
@@ -162,7 +163,7 @@ Packaging Team
 - repositories
 
 
-** Parts of a Build System
+** The Distribution Building Pipeline
 
 #+begin_notes
 - RPM building
@@ -223,7 +224,7 @@ Release Engineering
 Buildservice and Buildops
 
 #+ATTR_REVEAL: :frag (appear)
-@@html:<a href="https://github.com/openSUSE/open-build-service/"><i class="fa-brands fa-github"></i> openSUSE/open-build-service</a>@@
+@@html:<i class="fa-brands fa-github"></i> <a href="https://github.com/openSUSE/open-build-service/"> openSUSE/open-build-service</a>@@
 
 #+ATTR_REVEAL: :frag (appear)
 - develop the build service
@@ -266,7 +267,7 @@ QE & Test tooling Team
 * Infrastructure
 
 #+ATTR_REVEAL: :frag (appear)
-[[https://en.opensuse.org/openSUSE:Heroes][openSUSE Heroes]]
+@@html: <i class="fa-brands fa-opensuse"></i> <a href="https://en.opensuse.org/openSUSE:Heroes"> openSUSE Heroes</a>@@
 
 #+ATTR_REVEAL: :frag (appear)
 - run the infrastructure
