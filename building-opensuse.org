@@ -96,7 +96,7 @@ or what options to use.
 #+end_src
 
 #+ATTR_REVEAL: :frag appear
-Ain't no body got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
+Ain't nobody got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
 
 
 #+REVEAL: split
@@ -244,6 +244,12 @@ Buildservice and Buildops
 #+end_notes
 
 #+ATTR_REVEAL: :frag (appear)
+Run the installer every night?
+#+ATTR_REVEAL: :frag (appear)
+Ain't nobody got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
+
+
+#+ATTR_REVEAL: :frag (appear)
 @@html:<img src="./media/openqa_architecture.svg"/>@@
 
 #+REVEAL: split
@@ -265,6 +271,11 @@ QE & Test tooling Team
 
 
 * Infrastructure
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/servers-on-fire.png" height="500px"/>@@
+
+#+REVEAL: split
 
 #+ATTR_REVEAL: :frag (appear)
 @@html: <i class="fa-brands fa-opensuse"></i> <a href="https://en.opensuse.org/openSUSE:Heroes"> openSUSE Heroes</a>@@
