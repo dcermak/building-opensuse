@@ -1,8 +1,8 @@
 # -*- org-confirm-babel-evaluate: nil; -*-
 #+AUTHOR: Dan Čermák
-#+DATE: November 13, 2024
+#+DATE: February 2, 2025
 #+EMAIL: dcermak@suse.com
-#+TITLE: How openSUSE is built
+#+TITLE: openSUSE: Engineering Stable Rolling Releases with OBS and openQA
 #+SUBTITLE: From Source Code to an Installation Disk
 
 #+REVEAL_ROOT: ./node_modules/reveal.js/
@@ -19,7 +19,7 @@
 #+REVEAL_TITLE_SLIDE: <h2 class="title">%t</h2>
 #+REVEAL_TITLE_SLIDE: <p class="subtitle" style="color: Gray;">%s</p>
 #+REVEAL_TITLE_SLIDE: <p class="author">%a</p>
-#+REVEAL_TITLE_SLIDE: <div style="float:left"><a href="https://more.suse.com/openhousecz" target="_blank"><img src="./media/SUSE_Logo-hor_L_Green-pos_sRGB.svg" height="50px" style="margin-bottom:-12px"/>&nbsp SUSE Open House</a></div>
+#+REVEAL_TITLE_SLIDE: <div style="float:left"><a href="https://fosdem.org/2025/" target="_blank"><img src="./media/FOSDEM_logo.svg" height="50px" style="margin-bottom:-12px"/> FOSDEM 2025</a></div>
 #+REVEAL_TITLE_SLIDE: <div style="float:right;font-size:35px;"><p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#"><a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
 #+REVEAL_TITLE_SLIDE: CC BY 4.0 <i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i></a></p></div>
 
@@ -38,6 +38,203 @@ Dan Čermák
 @@html: <tr><td><i class="fab fa-mastodon"></i></td><td> <a href="https://mastodon.social/@Defolos">@Defolos@mastodon.social</a></td></tr>@@
 @@html: </table>@@
 @@html: </div>@@
+
+
+* Why openSUSE
+
+#+begin_notes
+- small distribution
+- unique tech stack
+- very different build system
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/distrowatch-opensuse.png"/>@@
+
+
+#+ATTR_REVEAL: :frag appear
+- RPM based distribution
+- unique tech stack: OBS, openQA, zypper
+
+
+* The Open Build Service
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/obs-overview.svg"/>@@
+
+
+** Projects & Packages
+
+@@html:<img src="./media/obs-devel_microos.png"/>@@
+
+#+REVEAL: split
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/docker-in-obs.png"/>@@
+
+#+REVEAL: split
+
+@@html:<img src="./media/obs-architecture.svg"/>@@
+
+#+REVEAL: split
+
+@@html:<img src="./media/obs-cross-project.svg"/>@@
+
+
+** automated rebuilds
+
+#+begin_notes
+- dependency graph calculated from inspecting sources
+- dependency resolution is *not* using the package manager \Rightarrow can happen on the backend & omit srpm creation
+- death: dynamic buildrequires
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/scheduler-obs.svg"/>@@
+
+
+** =prjconf=
+
+#+begin_notes
+- set stuff like repo types (rpm, docker, image, etc.)
+  or build flags
+- allows to completely override all macros \Rightarrow in Fedora that's done via
+  =redhat-rpm-config= & =srpm-*-macros-*= packages
+  \Rightarrow much more flexibility per project
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
+- configure project building & publishing
+- tweak macros & dependencies of a project
+
+#+ATTR_REVEAL: :frag appear :frag_idx 3
+#+begin_src
+BuildFlags: sbom:spdx
+PublishFlags: withsbom
+Macros:
+%suse_version 1699
+%is_opensuse 1
+%build_ldflags %{?_lto_cflags}
+:Macros
+#+end_src
+
+
+** =_link=
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/links.svg"/>@@
+
+
+** Repository Assembly?
+
+#+begin_notes
+- only ship what's required
+- remove obsolete packages
+- patchinfo creation
+- deltarpms
+
+surprisingly not in OBS \Rightarrow hacked together via =000package-groups= and releases
+using opensuse-release-tools to =000product= and =000release-packages=
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/repocreate.svg"/>@@
+
+#+REVEAL: split
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/openSUSE-Factory-000product.png"/>@@
+
+
+* Test automation
+
+#+begin_notes
+- test automation performed using openQA
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+Run the installer every night?
+#+ATTR_REVEAL: :frag (appear)
+Ain't nobody got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
+
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/openqa_architecture.svg"/>@@
+
+#+REVEAL: split
+
+@@html:<video id="video" src="./media/o3-test.mp4" controls/>@@
+
+#+REVEAL: split
+
+#+ATTR_REVEAL: :frag (appear)
+- 👍️ Test the Happy Path
+- 👎️ CI
+- 👎️ Regression Testing
+
+
+* Packaging Philosophy
+
+#+begin_notes
+- some packaging ecosystems fully automated (Ruby, perl)
+- go, rust bundle by default \Rightarrow pragmatic
+- 
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+- automation > manual
+- pragmatism > purity
+- a bit less colaboration (but it's getting besser)
+
+
+* The Factory Process
+
+#+begin_notes
+- how to submit to Factory
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/factory-process.svg"/>@@
+
+
+* The openSUSE Community
+
+#+ATTR_REVEAL: :frag (appear)
+Governance: openSUSE Board
+
+#+ATTR_REVEAL: :frag (appear)
+Anything else?
+
+#+ATTR_REVEAL: :frag (appear)
+No 🙅
+
+* The hero-developer
+#+begin_notes
+- gives you all the tools
+#+end_notes
+
+#+begin_quote
+Those who do, decide.
+#+end_quote
+
+
+* Conclusion
+
+#+ATTR_REVEAL: :frag (appear)
+Give those that can the tools to achieve greatness.
+
+#+ATTR_REVEAL: :frag (appear)
+But don't leave the rest behind
+
+
+* Links
+
+- [[https://build.opensuse.org/][build.opensuse.org]]
+- [[https://openqa.opensuse.org/][openqa.opensuse.org]]
+
+@@html:<img src="media/presentation-qr.svg" height="300px"/>@@
+
+@@html:<i class="fa-solid fa-person-chalkboard"></i>@@ [[https://github.com/dcermak/building-opensuse/][github.com/dcermak/building-opensuse]]
 
 
 * Why even build a distribution?
@@ -113,8 +310,6 @@ Ain't nobody got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
 - define dependencies, buildrequires, subpackages & a lot of other metadata
 #+end_notes
 
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/docker-in-obs.png"/>@@
 
 ** RPM packages
 
@@ -182,25 +377,6 @@ Packaging Team
 
 # Maybe skip this slide?
 
-#+begin_notes
-- only ship what's required
-- remove obsolete packages
-- patchinfo creation
-- deltarpms
-#+end_notes
-
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/repocreate.svg"/>@@
-
-
-** The Factory Process
-
-#+begin_notes
-- how to submit to Factory
-#+end_notes
-
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/factory-process.svg"/>@@
 
 
 ** The people behind this
@@ -214,9 +390,6 @@ Release Engineering
 
 
 * Build system
-
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/obs-overview.svg"/>@@
 
 ** The people behind this
 
@@ -236,25 +409,6 @@ Buildservice and Buildops
 #+ATTR_REVEAL: :frag (appear)
 @@html:<img src="media/Ubuntu_4.10_kernel_panic.png" height="500px"/>@@
 
-
-** Test automation
-
-#+begin_notes
-- test automation performed using openQA
-#+end_notes
-
-#+ATTR_REVEAL: :frag (appear)
-Run the installer every night?
-#+ATTR_REVEAL: :frag (appear)
-Ain't nobody got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
-
-
-#+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/openqa_architecture.svg"/>@@
-
-#+REVEAL: split
-
-@@html:<video id="video" src="./media/o3-test.mp4" controls/>@@
 
 
 ** The people behind this
@@ -285,19 +439,3 @@ QE & Test tooling Team
 - maintain automation
 - moderation
 
-
-* Links
-
-- [[https://get.opensuse.org/][get.opensuse.org]]
-- [[https://build.opensuse.org/][build.opensuse.org]]
-- [[https://openqa.opensuse.org/][openqa.opensuse.org]]
-
-@@html:<img src="media/presentation-qr.svg" height="300px"/>@@
-
-@@html:<i class="fa-solid fa-person-chalkboard"></i>@@ [[https://github.com/dcermak/building-opensuse/][github.com/dcermak/building-opensuse]]
-
-
-* Questions?
-
-#+ATTR_REVEAL: :frag (appear)
-Answers!
