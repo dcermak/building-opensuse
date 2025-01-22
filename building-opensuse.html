@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>How openSUSE is built</title>
+<title>openSUSE: Engineering Stable Rolling Releases with OBS and openQA</title>
 <meta name="author" content="Dan Čermák"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -31,17 +31,17 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h2 class="title">How openSUSE is built</h2>
+<section id="sec-title-slide"><h2 class="title">openSUSE: Engineering Stable Rolling Releases with OBS and openQA</h2>
 <p class="subtitle" style="color: Gray;">From Source Code to an Installation Disk</p>
 <p class="author">Dan Čermák</p>
-<div style="float:left"><a href="https://more.suse.com/openhousecz" target="_blank"><img src="./media/SUSE_Logo-hor_L_Green-pos_sRGB.svg" height="50px" style="margin-bottom:-12px"/>&nbsp SUSE Open House</a></div>
+<div style="float:left"><a href="https://fosdem.org/2025/" target="_blank"><img src="./media/FOSDEM_logo.svg" height="50px" style="margin-bottom:-12px"/> FOSDEM 2025</a></div>
 <div style="float:right;font-size:35px;"><p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#"><a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
 CC BY 4.0 <i class="fab fa-creative-commons"></i> <i class="fab fa-creative-commons-by"></i></a></p></div>
 </section>
 
 <section>
-<section id="slide-orgf42d04d">
-<h2 id="orgf42d04d">who -u</h2>
+<section id="slide-org2effd90">
+<h2 id="org2effd90">who -u</h2>
 <p>
 Dan Čermák
 </p>
@@ -64,8 +64,318 @@ Dan Čermák
 </section>
 </section>
 <section>
-<section id="slide-orgea257c6">
-<h2 id="orgea257c6">Why even build a distribution?</h2>
+<section id="slide-org3d288df">
+<h2 id="org3d288df">Why openSUSE</h2>
+<aside class="notes">
+<ul>
+<li>small distribution</li>
+<li>unique tech stack</li>
+<li>very different build system</li>
+
+</ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/distrowatch-opensuse.png"/>
+</p>
+
+
+<ul class="fragment appear">
+<li>RPM based distribution</li>
+<li>unique tech stack: OBS, openQA, zypper</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org130ff7b">
+<h2 id="org130ff7b">The Open Build Service</h2>
+<p class="fragment (appear)">
+<img src="./media/obs-overview.svg"/>
+</p>
+
+
+</section>
+<section id="slide-orgbf048fc">
+<h3 id="orgbf048fc">Projects &amp; Packages</h3>
+<p>
+<img src="./media/obs-devel_microos.png"/>
+</p>
+
+</section>
+<section id="slide-orgbf048fc-split">
+
+<p class="fragment (appear)">
+<img src="./media/docker-in-obs.png"/>
+</p>
+
+</section>
+<section id="slide-orgbf048fc-split">
+
+<p>
+<img src="./media/obs-architecture.svg"/>
+</p>
+
+</section>
+<section id="slide-orgbf048fc-split">
+
+<p>
+<img src="./media/obs-cross-project.svg"/>
+</p>
+
+
+</section>
+<section id="slide-org04b6073">
+<h3 id="org04b6073">automated rebuilds</h3>
+<aside class="notes">
+<ul>
+<li>dependency graph calculated from inspecting sources</li>
+<li>dependency resolution is <b>not</b> using the package manager &rArr; can happen on the backend &amp; omit srpm creation</li>
+<li>death: dynamic buildrequires</li>
+
+</ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/scheduler-obs.svg"/>
+</p>
+
+
+</section>
+<section id="slide-orga56fb66">
+<h3 id="orga56fb66"><code>prjconf</code></h3>
+<aside class="notes">
+<ul>
+<li>set stuff like repo types (rpm, docker, image, etc.)
+or build flags</li>
+<li>allows to completely override all macros &rArr; in Fedora that's done via
+<code>redhat-rpm-config</code> &amp; <code>srpm-*-macros-*</code> packages
+&rArr; much more flexibility per project</li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li data-fragment-index="1" class="fragment appear">configure project building &amp; publishing</li>
+<li data-fragment-index="2" class="fragment appear">tweak macros &amp; dependencies of a project</li>
+
+</ul>
+
+<pre  class="fragment appear" data-fragment-index="3" >
+BuildFlags: sbom:spdx
+PublishFlags: withsbom
+Macros:
+%suse_version 1699
+%is_opensuse 1
+%build_ldflags %{?_lto_cflags}
+:Macros
+</pre>
+
+
+</section>
+<section id="slide-orge2da242">
+<h3 id="orge2da242"><code>_link</code></h3>
+<p class="fragment (appear)">
+<img src="./media/links.svg"/>
+</p>
+
+
+</section>
+<section id="slide-org250e303">
+<h3 id="org250e303">Repository Assembly?</h3>
+<aside class="notes">
+<ul>
+<li>only ship what's required</li>
+<li>remove obsolete packages</li>
+<li>patchinfo creation</li>
+<li>deltarpms</li>
+
+</ul>
+
+<p>
+surprisingly not in OBS &rArr; hacked together via <code>000package-groups</code> and releases
+using opensuse-release-tools to <code>000product</code> and <code>000release-packages</code>
+</p>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/repocreate.svg"/>
+</p>
+
+</section>
+<section id="slide-org250e303-split">
+
+<p class="fragment (appear)">
+<img src="./media/openSUSE-Factory-000product.png"/>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org4aa5072">
+<h2 id="org4aa5072">Test automation</h2>
+<aside class="notes">
+<ul>
+<li>test automation performed using openQA</li>
+
+</ul>
+
+</aside>
+
+<p class="fragment (appear)">
+Run the installer every night?
+</p>
+<p class="fragment (appear)">
+Ain't nobody got time for that &nbsp;  (╯°□°)╯︵ ┻━┻
+</p>
+
+
+<p class="fragment (appear)">
+<img src="./media/openqa_architecture.svg"/>
+</p>
+
+</section>
+<section id="slide-org4aa5072-split">
+
+<p>
+<video id="video" src="./media/o3-test.mp4" controls/>
+</p>
+
+</section>
+<section id="slide-org4aa5072-split">
+
+<ul>
+<li class="fragment appear">👍️ Test the Happy Path</li>
+<li class="fragment appear">👎️ CI</li>
+<li class="fragment appear">👎️ Regression Testing</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org1b20a6a">
+<h2 id="org1b20a6a">Packaging Philosophy</h2>
+<aside class="notes">
+<ul>
+<li>some packaging ecosystems fully automated (Ruby, perl)</li>
+<li>go, rust bundle by default &rArr; pragmatic</li>
+<li></li>
+
+</ul>
+
+</aside>
+
+<ul>
+<li class="fragment appear">automation &gt; manual</li>
+<li class="fragment appear">pragmatism &gt; purity</li>
+<li class="fragment appear">a bit less colaboration (but it's getting besser)</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org79ad49e">
+<h2 id="org79ad49e">The Factory Process</h2>
+<aside class="notes">
+<ul>
+<li>how to submit to Factory</li>
+
+</ul>
+
+</aside>
+
+<p class="fragment (appear)">
+<img src="./media/factory-process.svg"/>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgdd15be6">
+<h2 id="orgdd15be6">The openSUSE Community</h2>
+<p class="fragment (appear)">
+Governance: openSUSE Board
+</p>
+
+<p class="fragment (appear)">
+Anything else?
+</p>
+
+<p class="fragment (appear)">
+No 🙅
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgeeee06c">
+<h2 id="orgeeee06c">The hero-developer</h2>
+<aside class="notes">
+<ul>
+<li>gives you all the tools</li>
+
+</ul>
+
+</aside>
+
+<blockquote >
+<p>
+Those who do, decide.
+</p>
+</blockquote>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org00e88ed">
+<h2 id="org00e88ed">Conclusion</h2>
+<p class="fragment (appear)">
+Give those that can the tools to achieve greatness.
+</p>
+
+<p class="fragment (appear)">
+But don't leave the rest behind
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org8388825">
+<h2 id="org8388825">Links</h2>
+<ul>
+<li><a href="https://build.opensuse.org/">build.opensuse.org</a></li>
+<li><a href="https://openqa.opensuse.org/">openqa.opensuse.org</a></li>
+
+</ul>
+
+<p>
+<img src="media/presentation-qr.svg" height="300px"/>
+</p>
+
+<p>
+<i class="fa-solid fa-person-chalkboard"></i> <a href="https://github.com/dcermak/building-opensuse/">github.com/dcermak/building-opensuse</a>
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgff48ead">
+<h2 id="orgff48ead">Why even build a distribution?</h2>
 <aside class="notes">
 <p>
 A distribution provides:
@@ -106,8 +416,8 @@ oops 🫠
 </section>
 </section>
 <section>
-<section id="slide-orgfb385cf">
-<h2 id="orgfb385cf">From Sources to an Installer</h2>
+<section id="slide-orgfa53571">
+<h2 id="orgfa53571">From Sources to an Installer</h2>
 <aside class="notes">
 <ul>
 <li>just distributing sources isn't good enough anymore</li>
@@ -145,7 +455,7 @@ Ain't nobody got time for that &nbsp;  (╯°□°)╯︵ ┻━┻
 
 
 </section>
-<section id="slide-orgfb385cf-split">
+<section id="slide-orgfa53571-split">
 <p>
 <img src="./media/from-source-to-image.svg"/>
 </p>
@@ -154,8 +464,8 @@ Ain't nobody got time for that &nbsp;  (╯°□°)╯︵ ┻━┻
 </section>
 </section>
 <section>
-<section id="slide-org4d7fe48">
-<h2 id="org4d7fe48">It starts with packages</h2>
+<section id="slide-org3112768">
+<h2 id="org3112768">It starts with packages</h2>
 <aside class="notes">
 <ul>
 <li>take upstream sources</li>
@@ -168,21 +478,18 @@ Ain't nobody got time for that &nbsp;  (╯°□°)╯︵ ┻━┻
 
 </aside>
 
-<p class="fragment (appear)">
-<img src="./media/docker-in-obs.png"/>
-</p>
 
 </section>
-<section id="slide-org8b06700">
-<h3 id="org8b06700">RPM packages</h3>
+<section id="slide-orgc634d33">
+<h3 id="orgc634d33">RPM packages</h3>
 <p class="fragment (appear)">
 <img src="./media/rpm-package.svg"/>
 </p>
 
 
 </section>
-<section id="slide-org3848b5f">
-<h3 id="org3848b5f">The people behind this</h3>
+<section id="slide-org3285c4c">
+<h3 id="org3285c4c">The people behind this</h3>
 <p class="fragment (appear)">
 Packaging Team
 </p>
@@ -198,23 +505,23 @@ Packaging Team
 </section>
 </section>
 <section>
-<section id="slide-org54e19b4">
-<h2 id="org54e19b4">You said Dependencies?</h2>
+<section id="slide-org7c81c62">
+<h2 id="org7c81c62">You said Dependencies?</h2>
 <p class="fragment (appear)">
 <img src="./media/dependencies.svg"/>
 </p>
 
 
 </section>
-<section id="slide-org6c43276">
-<h3 id="org6c43276">Dependency Hell 👿</h3>
+<section id="slide-orgbe8f4d5">
+<h3 id="orgbe8f4d5">Dependency Hell 👿</h3>
 <p class="fragment (appear)">
 <img src="./media/factory-ring0.png"/>
 </p>
 
 </section>
-<section id="slide-org61e5e03">
-<h3 id="org61e5e03">Distribution Assembly</h3>
+<section id="slide-orgf8551b1">
+<h3 id="orgf8551b1">Distribution Assembly</h3>
 <aside class="notes">
 <ul>
 <li>how do you combine the distro mess into a working thing?</li>
@@ -229,8 +536,8 @@ Packaging Team
 
 
 </section>
-<section id="slide-orgd9ae248">
-<h3 id="orgd9ae248">What's in a distribution?</h3>
+<section id="slide-org4fda120">
+<h3 id="org4fda120">What's in a distribution?</h3>
 <ul>
 <li class="fragment appear"><i class="fa-solid fa-compact-disc"></i> installation ISOs</li>
 <li class="fragment appear"><i class="fa-solid fa-hard-drive"></i> disk &amp; container images</li>
@@ -241,8 +548,8 @@ Packaging Team
 
 
 </section>
-<section id="slide-org2b72115">
-<h3 id="org2b72115">The Distribution Building Pipeline</h3>
+<section id="slide-org31d546e">
+<h3 id="org31d546e">The Distribution Building Pipeline</h3>
 <aside class="notes">
 <ul>
 <li>RPM building</li>
@@ -262,43 +569,14 @@ Packaging Team
 
 
 </section>
-<section id="slide-org35567a9">
-<h3 id="org35567a9">Repository Assembly</h3>
-<aside class="notes">
-<ul>
-<li>only ship what's required</li>
-<li>remove obsolete packages</li>
-<li>patchinfo creation</li>
-<li>deltarpms</li>
+<section id="slide-org5c44d9a">
+<h3 id="org5c44d9a">Repository Assembly</h3>
 
-</ul>
-
-</aside>
-
-<p class="fragment (appear)">
-<img src="./media/repocreate.svg"/>
-</p>
 
 
 </section>
-<section id="slide-org95348e2">
-<h3 id="org95348e2">The Factory Process</h3>
-<aside class="notes">
-<ul>
-<li>how to submit to Factory</li>
-
-</ul>
-
-</aside>
-
-<p class="fragment (appear)">
-<img src="./media/factory-process.svg"/>
-</p>
-
-
-</section>
-<section id="slide-orgaace540">
-<h3 id="orgaace540">The people behind this</h3>
+<section id="slide-org7f4dfa5">
+<h3 id="org7f4dfa5">The people behind this</h3>
 <p class="fragment (appear)">
 Release Engineering
 </p>
@@ -313,15 +591,13 @@ Release Engineering
 </section>
 </section>
 <section>
-<section id="slide-orgb922aad">
-<h2 id="orgb922aad">Build system</h2>
-<p class="fragment (appear)">
-<img src="./media/obs-overview.svg"/>
-</p>
-
+<section id="slide-org744573b">
+<h2 id="org744573b">Build system</h2>
+<div class="outline-text-2" id="text-org744573b">
+</div>
 </section>
-<section id="slide-orgb312b43">
-<h3 id="orgb312b43">The people behind this</h3>
+<section id="slide-org4af291a">
+<h3 id="org4af291a">The people behind this</h3>
 <p class="fragment (appear)">
 Buildservice and Buildops
 </p>
@@ -340,47 +616,17 @@ Buildservice and Buildops
 </section>
 </section>
 <section>
-<section id="slide-orge81c621">
-<h2 id="orge81c621">Testing/QE</h2>
+<section id="slide-org5aa7fe3">
+<h2 id="org5aa7fe3">Testing/QE</h2>
 <p class="fragment (appear)">
 <img src="media/Ubuntu_4.10_kernel_panic.png" height="500px"/>
 </p>
 
 
-</section>
-<section id="slide-org2e05cef">
-<h3 id="org2e05cef">Test automation</h3>
-<aside class="notes">
-<ul>
-<li>test automation performed using openQA</li>
-
-</ul>
-
-</aside>
-
-<p class="fragment (appear)">
-Run the installer every night?
-</p>
-<p class="fragment (appear)">
-Ain't nobody got time for that &nbsp;  (╯°□°)╯︵ ┻━┻
-</p>
-
-
-<p class="fragment (appear)">
-<img src="./media/openqa_architecture.svg"/>
-</p>
 
 </section>
-<section id="slide-org2e05cef-split">
-
-<p>
-<video id="video" src="./media/o3-test.mp4" controls/>
-</p>
-
-
-</section>
-<section id="slide-orgaf17dd9">
-<h3 id="orgaf17dd9">The people behind this</h3>
+<section id="slide-org30de78e">
+<h3 id="org30de78e">The people behind this</h3>
 <p class="fragment (appear)">
 QE &amp; Test tooling Team
 </p>
@@ -398,14 +644,14 @@ QE &amp; Test tooling Team
 </section>
 </section>
 <section>
-<section id="slide-org20872e8">
-<h2 id="org20872e8">Infrastructure</h2>
+<section id="slide-orgad83c82">
+<h2 id="orgad83c82">Infrastructure</h2>
 <p class="fragment (appear)">
 <img src="./media/servers-on-fire.png" height="500px"/>
 </p>
 
 </section>
-<section id="slide-org20872e8-split">
+<section id="slide-orgad83c82-split">
 
 <p class="fragment (appear)">
  <i class="fa-brands fa-opensuse"></i> <a href="https://en.opensuse.org/openSUSE:Heroes"> openSUSE Heroes</a>
@@ -417,37 +663,6 @@ QE &amp; Test tooling Team
 <li class="fragment appear">moderation</li>
 
 </ul>
-
-
-</section>
-</section>
-<section>
-<section id="slide-orgddda698">
-<h2 id="orgddda698">Links</h2>
-<ul>
-<li><a href="https://get.opensuse.org/">get.opensuse.org</a></li>
-<li><a href="https://build.opensuse.org/">build.opensuse.org</a></li>
-<li><a href="https://openqa.opensuse.org/">openqa.opensuse.org</a></li>
-
-</ul>
-
-<p>
-<img src="media/presentation-qr.svg" height="300px"/>
-</p>
-
-<p>
-<i class="fa-solid fa-person-chalkboard"></i> <a href="https://github.com/dcermak/building-opensuse/">github.com/dcermak/building-opensuse</a>
-</p>
-
-
-</section>
-</section>
-<section>
-<section id="slide-org77bced9">
-<h2 id="org77bced9">Questions?</h2>
-<p class="fragment (appear)">
-Answers!
-</p>
 </section>
 </section>
 </div>
