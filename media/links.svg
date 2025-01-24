@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="168.8199mm"
-   height="69.152069mm"
-   viewBox="0 0 168.81991 69.152071"
+   width="169.17897mm"
+   height="70.478859mm"
+   viewBox="0 0 169.17898 70.478861"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.4954495"
-     inkscape:cx="353.40545"
-     inkscape:cy="82.583865"
+     inkscape:cx="363.43588"
+     inkscape:cy="87.264732"
      inkscape:window-width="2556"
      inkscape:window-height="1396"
      inkscape:window-x="1920"
@@ -210,7 +210,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-22.304955,-4.7845063)">
+     transform="translate(-19.822766,-3.4577174)">
     <rect
        style="opacity:0.98;fill:none;stroke:#000000;stroke-width:0.428001;stroke-dasharray:none;stroke-opacity:1"
        id="rect1"
@@ -324,39 +324,39 @@
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:2;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;opacity:0.98;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428001;stroke-dasharray:none;stroke-opacity:1"
-       x="112.2776"
-       y="9.8464184"
+       x="89.121277"
+       y="9.3156414"
        id="text1-2-4-7-8-2"><tspan
          sodipodi:role="line"
          id="tspan1-5-6-7-5-5"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428"
-         x="112.2776"
-         y="9.8464184">openSUSE:Factory</tspan></text>
+         x="89.121269"
+         y="9.3156414">openSUSE:Factory/notmuch</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:2;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;opacity:0.98;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428001;stroke-dasharray:none;stroke-opacity:1"
-       x="126.84015"
+       x="134.2775"
        y="72.623154"
        id="text1-2-4-7-8-2-6"><tspan
          sodipodi:role="line"
          id="tspan1-5-6-7-5-5-6"
          style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428"
-         x="126.84015"
-         y="72.623154">devel:c_c++</tspan></text>
+         x="134.2775"
+         y="72.623154">devel:c_c++/notmuch</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:1.1;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;opacity:0.98;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428001;stroke-dasharray:none;stroke-opacity:1"
-       x="180.71518"
+       x="178.59207"
        y="33.728386"
        id="text1-2-4-7-8-2-6-6"><tspan
          sodipodi:role="line"
          id="tspan1-5-6-7-5-5-6-9"
          style="line-height:1.1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428"
-         x="180.71518"
+         x="178.59207"
          y="33.728386">3-way</tspan><tspan
          sodipodi:role="line"
          style="line-height:1.1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.428"
-         x="180.71518"
+         x="178.59207"
          y="41.489502"
          id="tspan2">merge</tspan></text>
     <path
@@ -427,10 +427,9 @@
        id="path1-9"
        sodipodi:nodetypes="cc" />
     <path
-       style="opacity:0.98;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.428096;stroke-dasharray:1.71238, 1.71238;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-2-0)"
-       d="M 154.12026,29.898935 171.98,47.768423"
-       id="path1-9-2"
-       sodipodi:nodetypes="cc" />
+       style="opacity:0.98;fill:none;fill-opacity:1;stroke:#0077bb;stroke-width:0.428096;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-2-0)"
+       d="m 154.12026,29.898935 c 5.95325,5.956496 11.90649,11.912992 17.85974,17.869488"
+       id="path1-9-2" />
     <path
        style="opacity:0.98;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.428096;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#DartArrow-8-4)"
        d="M 94.936349,54.978142 H 110.09798"
@@ -442,7 +441,7 @@
        id="path1-8-2-9"
        sodipodi:nodetypes="cc" />
     <rect
-       style="opacity:0.98;fill:#33bbee;fill-opacity:1;stroke:#000000;stroke-width:0.428001;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.98;fill:#0077bb;fill-opacity:1;stroke:#000000;stroke-width:0.428001;stroke-dasharray:none;stroke-opacity:1"
        id="rect1-9-9-4-0-6"
        width="12.260318"
        height="13.261161"
@@ -461,9 +460,25 @@
          x="179.09349"
          y="57.283123">d</tspan></text>
     <path
-       style="opacity:0.98;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.428096;stroke-dasharray:1.71238, 1.71238;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-8-6-5-0)"
+       style="opacity:0.98;fill:none;fill-opacity:1;stroke:#0077bb;stroke-width:0.428096;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#DartArrow-8-6-5-0)"
        d="m 155.112,54.978142 h 15.16163"
        id="path1-8-2-0-3"
        sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396875;stroke-dasharray:1.5875, 1.5875;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect13110-6-8-7-9-5"
+       width="138.3129"
+       height="17.957359"
+       x="20.021204"
+       y="15.345874"
+       ry="5.3232012" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.396875;stroke-dasharray:1.5875, 1.5875;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect13110-6-8-7-9-5-4"
+       width="106.99707"
+       height="17.603508"
+       x="80.585617"
+       y="45.996609"
+       ry="5.3232012" />
   </g>
 </svg>
