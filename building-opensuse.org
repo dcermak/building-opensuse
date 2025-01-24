@@ -3,7 +3,7 @@
 #+DATE: February 2, 2025
 #+EMAIL: dcermak@suse.com
 #+TITLE: openSUSE: Engineering Stable Rolling Releases with OBS and openQA
-#+SUBTITLE: From Source Code to an Installation Disk
+# #+SUBTITLE: From Source Code to an Installation Disk
 
 #+REVEAL_ROOT: ./node_modules/reveal.js/
 #+REVEAL_THEME: simple
@@ -30,6 +30,7 @@ Dan Čermák
 @@html: <div style="float:center">@@
 @@html: <table class="who-table">@@
 @@html: <tr><td><i class="fab fa-suse"></i></td><td> Software Developer @SUSE, SLE BCI Releng</td></tr>@@
+@@html: <tr><td><i class="fab fa-fedora"></i></td><td> i3 SIG, Package maintainer</td></tr>@@
 @@html: <tr><td><i class="far fa-heart"></i></td><td> Developer Tools, Testing and Documentation, Home Automation</td></tr>@@
 @@html: <tr></tr>@@
 @@html: <tr></tr>@@
@@ -40,7 +41,7 @@ Dan Čermák
 @@html: </div>@@
 
 
-* Why openSUSE
+* Why openSUSE?
 
 #+begin_notes
 - small distribution
@@ -52,9 +53,21 @@ Dan Čermák
 @@html:<img src="./media/distrowatch-opensuse.png"/>@@
 
 
-#+ATTR_REVEAL: :frag appear
+#+ATTR_REVEAL: :frag (appear)
 - RPM based distribution
 - unique tech stack: OBS, openQA, zypper
+
+
+** There's a lot of openSUSE
+
+#+ATTR_REVEAL: :frag (appear)
+- Tumbleweed
+- MicroOS
+- Aeon
+- Kalpa
+- Slow Roll
+- Leap
+- Leap Micro
 
 
 * The Open Build Service
@@ -73,6 +86,12 @@ Dan Čermák
 @@html:<img src="./media/docker-in-obs.png"/>@@
 
 #+REVEAL: split
+@@html:<img src="./media/linux-distro-build-pipeline.svg"/>@@
+
+#+REVEAL: split
+@@html:<img src="./media/linux-distro-build-pipeline-openSUSE.svg"/>@@
+
+#+REVEAL: split
 
 @@html:<img src="./media/obs-architecture.svg"/>@@
 
@@ -81,12 +100,13 @@ Dan Čermák
 @@html:<img src="./media/obs-cross-project.svg"/>@@
 
 
-** automated rebuilds
+** Automated Rebuilds
 
 #+begin_notes
 - dependency graph calculated from inspecting sources
 - dependency resolution is *not* using the package manager \Rightarrow can happen on the backend & omit srpm creation
 - death: dynamic buildrequires
+- works accross different build types (rpms \rightarrow disk images or rpms \rightarrow container \rightarrow container)
 #+end_notes
 
 #+ATTR_REVEAL: :frag (appear)
@@ -143,7 +163,10 @@ using opensuse-release-tools to =000product= and =000release-packages=
 #+REVEAL: split
 
 #+ATTR_REVEAL: :frag (appear)
-@@html:<img src="./media/openSUSE-Factory-000product.png"/>@@
+@@html:<img src="./media/opensuse-release-tools.svg"/>@@
+
+# #+ATTR_REVEAL: :frag (appear)
+# @@html:<img src="./media/openSUSE-Factory-000product.png"/>@@
 
 
 * Test automation
@@ -171,6 +194,36 @@ Ain't nobody got time for that @@html:&nbsp;@@  (╯°□°)╯︵ ┻━┻
 - 👍️ Test the Happy Path
 - 👎️ CI
 - 👎️ Regression Testing
+
+
+* But wait there's more
+
+@@html:<img src="./media/but-wait-theres-more.jpeg" height="500px"/>@@
+
+
+** Kiwi
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/kiwi-logo.png" height="50px" style="margin-bottom:-12px"/>@@ Image Builder
+
+#+ATTR_REVEAL: :frag (appear)
+- openSUSE's & SUSE's image builder
+- cross distribution support
+
+** =pbuild=
+
+#+begin_notes
+- essentially the OBS backend powered by a single CLI
+- extremely powerful, but needs the same input as OBS
+- very, very underdocumented
+- fortunately, =osc cpc= is a thing
+#+end_notes
+
+#+ATTR_REVEAL: :frag (appear)
+OBS, but on your *local* box
+
+#+ATTR_REVEAL: :frag (appear)
+@@html:<img src="./media/pbuild.png"/>@@
 
 
 * Packaging Philosophy
@@ -208,11 +261,13 @@ Anything else?
 #+ATTR_REVEAL: :frag (appear)
 No 🙅
 
-* The hero-developer
+
+* Heroic Developers and Hidden Angels
 #+begin_notes
 - gives you all the tools
 #+end_notes
 
+#+ATTR_REVEAL: :frag (appear)
 #+begin_quote
 Those who do, decide.
 #+end_quote
@@ -221,7 +276,7 @@ Those who do, decide.
 * Conclusion
 
 #+ATTR_REVEAL: :frag (appear)
-Give those that can the tools to achieve greatness.
+Give those that can the tools to achieve greatness
 
 #+ATTR_REVEAL: :frag (appear)
 But don't leave the rest behind
